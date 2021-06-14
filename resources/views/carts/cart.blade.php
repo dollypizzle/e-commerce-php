@@ -43,8 +43,8 @@
             </td>
             <td data-th="Subtotal" class="text-center">₦{{ $details['price'] * $details['quantity'] }}</td>
             <td class="actions" data-th="">
-                <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
-                <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
+                <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><em class="fa fa-refresh"></em></button>
+                <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><em class="fa fa-trash-o"></em></button>
             </td>
         </tr>
         @endforeach
@@ -56,7 +56,7 @@
             <td class="text-center"><strong>Total {{ $total }}</strong></td>
         </tr>
         <tr>
-            <td><a href="{{ url('/products') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td><a href="{{ url('/products') }}" class="btn btn-warning"><em class="fa fa-angle-left"></em> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong>Total ₦{{ $total }}</strong></td>
         </tr>
