@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('brand');
             $table->unsignedInteger('owner_id');
-            $table->binary('picture');
+            $table->string('picture');
             $table->decimal('price');
             $table->text('description')->nullable();
             $table->timestamps();
