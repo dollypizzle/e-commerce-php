@@ -90,7 +90,6 @@ class ProductsController extends Controller
         }
         $cart = session()->get('cart');
 
-        // if cart is empty then this the first product
         if (!$cart) {
 
             $cart = [
@@ -105,9 +104,7 @@ class ProductsController extends Controller
             session()->put('cart', $cart);
 
             return redirect('/cart');
-            // return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
-        // if cart not empty then check if this product exist then increment quantity
         if (isset($cart[$id])) {
 
             $cart[$id]['quantity']++;
@@ -115,11 +112,9 @@ class ProductsController extends Controller
             session()->put('cart', $cart);
 
             return redirect('/cart');
-            // return redirect()->back()->with('success', 'Product added to cart successfully!');
 
         }
 
-        // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
             "name" => $product->name,
             "quantity" => 1,
@@ -129,11 +124,10 @@ class ProductsController extends Controller
 
         session()->put('cart', $cart);
         return redirect('/cart');
-        // return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
     public function updated(Request $request)
     {
-        if ($request->id and $request->quantity) {
+        if ($request->id && $request->quantity) {
             $cart = session()->get('cart');
 
             $cart[$request->id]["quantity"] = $request->quantity;
